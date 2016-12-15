@@ -8,7 +8,7 @@ let stationId = 'one'
 
 export default function init() {
   // Icon found at: http://www.flaticon.com/free-icon/programming-code-signs_59118#term=code&page=2&position=15
-  tray = new Tray('./icon.png')
+  tray = new Tray('./iconTemplate.png')
   watchStationUsers()
 }
 
