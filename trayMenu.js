@@ -86,6 +86,8 @@ async function updateGitUser(users, lastCommitAuthor) {
     .concat(activeUsers.filter(u => u.id !== nextCommitAuthor.id).map(u => u.fullName))
     .join(', ')
 
+  console.log(`Git config user changed to: ${name} <${nextCommitAuthor.email}>`)
+
   exec(`git config --global user.name "${name}"`)
   exec(`git config --global user.email "${nextCommitAuthor.email}"`)
 }
