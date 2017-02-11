@@ -1,6 +1,7 @@
 import { Menu, Tray } from 'electron'
 import firebase from 'firebase'
 import { exec } from 'child_process'
+import menubar from 'menubar'
 
 import showSettingsWindow from './settingsWindow'
 
@@ -10,7 +11,10 @@ let stationId = 'one'
 export default function init() {
   // Icon found at: http://www.flaticon.com/free-icon/programming-code-signs_59118#term=code&page=2&position=15
   tray = new Tray('./iconTemplate.png')
-  watchStationUsers()
+  // watchStationUsers()
+
+  menu.popup()
+  tray.setContextMenu()
 }
 
 function watchStationUsers() {
